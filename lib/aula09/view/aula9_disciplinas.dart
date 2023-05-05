@@ -1,4 +1,5 @@
 import 'package:aula7/aula09/classes/disciplina.dart';
+import 'package:aula7/aula09/widgets/disciplinas_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -12,12 +13,14 @@ class Aula9Disciplinas extends StatelessWidget {
     final List<Disciplina> disciplinas = Disciplina.gerarDisciplinas();
 
     return ListView.builder(
-      itemCount: disciplinas.length,
-      itemBuilder: (context, index) => ListTile(
+        itemCount: disciplinas.length,
+        itemBuilder: (context, index) =>
+            DisciplinaCard(disciplina: disciplinas[index]));
+  }
+}
+
+ /*ListTile(
         leading: Text(disciplinas[index].codigo),
         title: Text(disciplinas[index].nome),
         subtitle: Text(disciplinas[index].professor),
-      ),
-    );
-  }
-}
+      ),*/
